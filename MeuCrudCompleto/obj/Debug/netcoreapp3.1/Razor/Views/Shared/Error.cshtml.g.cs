@@ -4,7 +4,7 @@
 [assembly: global::Microsoft.AspNetCore.Razor.Hosting.RazorCompiledItemAttribute(typeof(AspNetCore.Views_Shared_Error), @"mvc.1.0.view", @"/Views/Shared/Error.cshtml")]
 namespace AspNetCore
 {
-    #line hidden
+#line hidden
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -14,15 +14,15 @@ namespace AspNetCore
     using Microsoft.AspNetCore.Mvc.ViewFeatures;
 #nullable restore
 #line 1 "C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\Views\_ViewImports.cshtml"
-using MeuCrudCompleto;
+    using MeuCrudCompleto;
 
 #line default
 #line hidden
 #nullable disable
 #nullable restore
 #line 2 "C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\Views\_ViewImports.cshtml"
-using MeuCrudCompleto.Models;
-
+    using MeuCrudCompleto.Models;
+    using MeuCrudCompleto.Models.ViewsModels;
 #line default
 #line hidden
 #nullable disable
@@ -30,13 +30,13 @@ using MeuCrudCompleto.Models;
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"f60fb21b13da67ddf407861fe31b5a44a5345eff", @"/Views/_ViewImports.cshtml")]
     public class Views_Shared_Error : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<ErrorViewModel>
     {
-        #pragma warning disable 1998
+#pragma warning disable 1998
         public async override global::System.Threading.Tasks.Task ExecuteAsync()
         {
 #nullable restore
 #line 2 "C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\Views\Shared\Error.cshtml"
-  
-    ViewData["Title"] = "Error";
+
+            ViewData["Title"] = "Error";
 
 #line default
 #line hidden
@@ -44,24 +44,24 @@ using MeuCrudCompleto.Models;
             WriteLiteral("\r\n<h1 class=\"text-danger\">Error.</h1>\r\n<h2 class=\"text-danger\">An error occurred while processing your request.</h2>\r\n\r\n");
 #nullable restore
 #line 9 "C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\Views\Shared\Error.cshtml"
- if (Model.ShowRequestId)
-{
+            if (Model.ShowRequestId)
+            {
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("    <p>\r\n        <strong>Request ID:</strong> <code>");
+                WriteLiteral("    <p>\r\n        <strong>Request ID:</strong> <code>");
 #nullable restore
 #line 12 "C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\Views\Shared\Error.cshtml"
-                                      Write(Model.RequestId);
+                Write(Model.RequestId);
 
 #line default
 #line hidden
 #nullable disable
-            WriteLiteral("</code>\r\n    </p>\r\n");
+                WriteLiteral("</code>\r\n    </p>\r\n");
 #nullable restore
 #line 14 "C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\Views\Shared\Error.cshtml"
-}
+            }
 
 #line default
 #line hidden
@@ -79,7 +79,7 @@ using MeuCrudCompleto.Models;
 </p>
 ");
         }
-        #pragma warning restore 1998
+#pragma warning restore 1998
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]
         public global::Microsoft.AspNetCore.Mvc.ViewFeatures.IModelExpressionProvider ModelExpressionProvider { get; private set; }
         [global::Microsoft.AspNetCore.Mvc.Razor.Internal.RazorInjectAttribute]

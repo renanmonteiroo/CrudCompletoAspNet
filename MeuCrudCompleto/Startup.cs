@@ -27,8 +27,10 @@ namespace MeuCrudCompleto
         {
             services.AddControllersWithViews();
 
+
             services.AddDbContext<MeuCrudCompletoContext>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("MeuCrudCompletoContext")));
+                   options.UseMySql(Configuration.GetConnectionString("MeuCrudCompletoContext"), builder =>
+                         builder.MigrationsAssembly("MeuCrudCompleto")));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
