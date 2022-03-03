@@ -154,3 +154,5 @@ C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudC
 C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\bin\Debug\netcoreapp3.1\MySqlConnector.dll
 C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll
 C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll
+C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contatos.cshtml.g.cs
+C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
