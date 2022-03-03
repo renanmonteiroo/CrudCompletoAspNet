@@ -157,3 +157,4 @@ C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudC
 C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contatos.cshtml.g.cs
 C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs
 C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\obj\Debug\netcoreapp3.1\Razor\Views\Vendedores\Index.cshtml.g.cs
+C:\Users\Renan-Monteiro\OneDrive\Projetos e estudo\.NET\MeuCrudCompleto\MeuCrudCompleto\obj\Debug\netcoreapp3.1\Razor\Views\Vendedores\Create.cshtml.g.cs

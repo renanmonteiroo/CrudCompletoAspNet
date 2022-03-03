@@ -1,10 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using MeuCrudCompleto.Data;
+using MeuCrudCompleto.Models;
+using MeuCrudCompleto.Servicos;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using MeuCrudCompleto.Servicos;
-using MeuCrudCompleto.Data;
 
 namespace MeuCrudCompleto.Controllers
 {
@@ -21,5 +22,17 @@ namespace MeuCrudCompleto.Controllers
             var list = _vendedorServico.FindAll();
             return View(list);
         }
+        public IActionResult Create()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Create(Vendedor vendedor)
+        {
+            _vendedorServico.Insert(vendedor);
+            return RedirectToAction(nameof(Index));
+        }
     }
+
 }
