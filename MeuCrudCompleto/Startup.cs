@@ -9,7 +9,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
+using MeuCrudCompleto.Models;
 using MeuCrudCompleto.Data;
+
+
 
 namespace MeuCrudCompleto
 {
@@ -31,14 +34,17 @@ namespace MeuCrudCompleto
             services.AddDbContext<MeuCrudCompletoContext>(options =>
                    options.UseMySql(Configuration.GetConnectionString("MeuCrudCompletoContext"), builder =>
                          builder.MigrationsAssembly("MeuCrudCompleto")));
+
+            services.AddScoped<EnviandoServico>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,EnviandoServico enviandoServico)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                enviandoServico.Envio();
             }
             else
             {
