@@ -1,5 +1,6 @@
 ﻿using MeuCrudCompleto.Data;
 using MeuCrudCompleto.Models;
+using MeuCrudCompleto.Models.ViewsModels;
 using MeuCrudCompleto.Servicos;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -12,9 +13,11 @@ namespace MeuCrudCompleto.Controllers
     public class VendedoresController : Controller
     {
         private readonly VendedorServico _vendedorServico;
-        public VendedoresController(VendedorServico vendedorServico)
+        private readonly DepartamentoServico _departamentoServico;
+        public VendedoresController(VendedorServico vendedorServico,DepartamentoServico departamentoServico)
         {
             _vendedorServico = vendedorServico;
+            _departamentoServico = departamentoServico;
         }
 
         public IActionResult Index()
@@ -24,7 +27,9 @@ namespace MeuCrudCompleto.Controllers
         }
         public IActionResult Create()
         {
-            return View();
+            var departamentos = _departamentoServico.FindAll();
+            var viewModel = new VendedorCadastroViewModel { Departamentos = departamentos };
+            return View(viewModel);
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
