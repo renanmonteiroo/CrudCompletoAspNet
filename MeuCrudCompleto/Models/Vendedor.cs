@@ -4,9 +4,9 @@ using System.Linq;
 
 namespace MeuCrudCompleto.Models
 {
-    public class Vendedor
+    public class Vendedor : Entity
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
         public string Nome { get; set; }
 
         public string Email { get; set; }
@@ -16,7 +16,7 @@ namespace MeuCrudCompleto.Models
         public Departamento Departamento { get; set; }
         public ICollection<RegistroDeVendas> Vendas { get; set; } = new List<RegistroDeVendas>();
 
-        public Vendedor()
+        public Vendedor()//
         {
         }
 

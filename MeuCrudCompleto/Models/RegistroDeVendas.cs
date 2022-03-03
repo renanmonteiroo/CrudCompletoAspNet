@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace MeuCrudCompleto.Models
 {
-    public class RegistroDeVendas
+    public class RegistroDeVendas : Entity
     {
-        public int Id { get; set; }
+        // public int Id { get; set; }
         public DateTime Date { get; set; }
         public double Montante { get; set; }
         public StatusDeVendas status { get; set; }
