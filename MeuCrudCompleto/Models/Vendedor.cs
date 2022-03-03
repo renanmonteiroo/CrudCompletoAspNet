@@ -9,7 +9,7 @@ namespace MeuCrudCompleto.Models
         public int Id { get; set; }
         public string Nome { get; set; }
 
-        public string email { get; set; }
+        public string Email { get; set; }
         public DateTime DataAniversario { get; set; }
         public double BaseSalario { get; set; }
 
@@ -24,7 +24,7 @@ namespace MeuCrudCompleto.Models
         {
             Id = id;
             Nome = nome;
-            this.email = email;
+            this.Email = email;
             DataAniversario = dataAniversario;
             BaseSalario = baseSalario;
             Departamento = departamento;

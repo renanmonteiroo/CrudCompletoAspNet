@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using MeuCrudCompleto.Models;
 using MeuCrudCompleto.Data;
-
+using MeuCrudCompleto.Servicos;
 
 
 namespace MeuCrudCompleto
@@ -36,6 +36,7 @@ namespace MeuCrudCompleto
                          builder.MigrationsAssembly("MeuCrudCompleto")));
 
             services.AddScoped<EnviandoServico>();
+            services.AddScoped<VendedorServico>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
