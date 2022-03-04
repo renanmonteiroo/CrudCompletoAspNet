@@ -3,6 +3,7 @@ using MeuCrudCompleto.Models;
 using MeuCrudCompleto.Models.ViewsModels;
 using MeuCrudCompleto.Servicos;
 using Microsoft.AspNetCore.Mvc;
+using SalesWebMvc.Services.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -70,8 +71,47 @@ namespace MeuCrudCompleto.Controllers
             {
                 return NotFound();
             }
+
             return View(obj);
         }
-    }
 
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var obj = _vendedorServico.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            List<Departamento> departamentos = _departamentoServico.FindAll();
+            VendedorCadastroViewModel viewModel = new VendedorCadastroViewModel { Vendedor = obj, Departamentos = departamentos };
+            return View(viewModel);
+
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(int id, Vendedor vendedor)
+        {
+            if (id != vendedor.Id)
+            {
+                return BadRequest();
+            }
+            try {
+            _vendedorServico.Update(vendedor);
+            return RedirectToAction(nameof(Index));
+            }
+            catch (NotFoundException)
+            {
+                return NotFound();
+            }
+            catch (DbConcurrencyException)
+            {
+                return BadRequest();
+            }
+        }
+    }
 }
