@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using MeuCrudCompleto.Data;
 using MeuCrudCompleto.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace MeuCrudCompleto.Servicos
 {
@@ -27,7 +28,7 @@ namespace MeuCrudCompleto.Servicos
         }
         public Vendedor FindById(int id)
         {
-            return _context.Vendedor.FirstOrDefault(obj => obj.Id == id);
+            return _context.Vendedor.Include(obj => obj.Departamento).FirstOrDefault(obj => obj.Id == id);
         }
         public void Remove(int id)
         {

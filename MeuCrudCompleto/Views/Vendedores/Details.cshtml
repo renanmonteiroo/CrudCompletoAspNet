@@ -1,0 +1,49 @@
+﻿@model MeuCrudCompleto.Models.Vendedor
+
+
+@{ViewData["Title"] = "Detalhes";
+
+}
+<br />
+<div>
+    <h2>@ViewData["Title"]</h2>
+    <hr />
+
+    <dl class="dl-horizonttal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.DataAniversario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.DataAniversario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.BaseSalario)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.BaseSalario)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Departamento)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Departamento.nome)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-router-id="@Model.Id" class="btn btn-outline-success">Editar</a>
+    <a asp-action="Index" class="btn btn-default">Voltar</a>
+
+</div>

@@ -15,7 +15,7 @@ namespace MeuCrudCompleto.Controllers
     {
         private readonly VendedorServico _vendedorServico;
         private readonly DepartamentoServico _departamentoServico;
-        public VendedoresController(VendedorServico vendedorServico,DepartamentoServico departamentoServico)
+        public VendedoresController(VendedorServico vendedorServico, DepartamentoServico departamentoServico)
         {
             _vendedorServico = vendedorServico;
             _departamentoServico = departamentoServico;
@@ -58,6 +58,19 @@ namespace MeuCrudCompleto.Controllers
         {
             _vendedorServico.Remove(id);
             return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _vendedorServico.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
         }
     }
 
