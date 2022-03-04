@@ -19,5 +19,7 @@ namespace MeuCrudCompleto.Servicos
         {
             return _context.Departamento.OrderBy(x => x.nome).ToList();
         }
+
+      
     }
 }

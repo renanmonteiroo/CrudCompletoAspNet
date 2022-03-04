@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
 namespace MeuCrudCompleto.Controllers
 {
     public class VendedoresController : Controller
@@ -36,6 +37,26 @@ namespace MeuCrudCompleto.Controllers
         public IActionResult Create(Vendedor vendedor)
         {
             _vendedorServico.Insert(vendedor);
+            return RedirectToAction(nameof(Index));
+        }
+        public IActionResult Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+            var obj = _vendedorServico.FindById(id.Value);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(int id)
+        {
+            _vendedorServico.Remove(id);
             return RedirectToAction(nameof(Index));
         }
     }
