@@ -8,17 +8,24 @@ namespace MeuCrudCompleto.Models
     public class Vendedor
     {
         public int Id { get; set; }
+
+        [Required(ErrorMessage = "{0} Requerido")]
+        [StringLength(60, MinimumLength = 3, ErrorMessage = "{0} deve ser maior que 3")]
         public string Nome { get; set; }
 
-              
+        [Required(ErrorMessage = " {0} Requerido")]
         [DataType(DataType.EmailAddress)]       
         public string Email { get; set; }
 
+        [Required(ErrorMessage = "{0} Requerido")]
         [Display(Name = "Data de Aniversario")]
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime DataAniversario { get; set; }
+
         [Display(Name = "Salario Base")]
+        [Required(ErrorMessage = " {0} Requerido")]
+        [Range(100.0, 50000.0, ErrorMessage =  "{0} must be from {1} to {2}")]
         [DisplayFormat(DataFormatString ="{0:F2}")]
         public double BaseSalario { get; set; }
 

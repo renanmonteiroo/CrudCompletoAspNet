@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace MeuCrudCompleto.Servicos
@@ -15,9 +16,9 @@ namespace MeuCrudCompleto.Servicos
         {
             _context = context;
         }
-        public List<Departamento> FindAll()
+        public async Task<List<Departamento>> FindAllAsync()
         {
-            return _context.Departamento.OrderBy(x => x.nome).ToList();
+            return await _context.Departamento.OrderBy(x => x.nome).ToListAsync();
         }
 
       
